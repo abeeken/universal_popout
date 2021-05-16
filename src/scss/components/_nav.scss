@@ -1,0 +1,67 @@
+// Nav styles
+nav{
+    .nav--trigger{
+        display: none;
+        @media screen and (max-width: $md) {
+            display: block;
+        }
+    }
+    .nav--close{
+        display: none;
+        @media screen and (max-width: $md) {
+            display: block;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+    }
+    #nav-wrapper{
+        @media screen and (min-width: $md) {
+            display: block;
+        }
+        @media screen and (max-width: $md) {
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: #ccc;
+            z-index: 50;
+        }
+    }
+    ul{
+        display: flex;
+        padding: 0;
+        list-style: none;
+        flex-direction: row;
+        @media screen and (max-width: $md) {
+            flex-direction: column;
+        }
+        li{
+            position: relative;
+            a{
+                display: block;
+                padding: 5px 10px;
+                color: black;
+                text-decoration: none;
+                &:hover{
+                    background: #ccc;
+                }
+            }
+            @media screen and (min-width: $md) {
+                ul{
+                    position: absolute;
+                    background: #ccc;
+                    top: 100%;
+                    width: 100%;
+                    li{
+                        display: block;
+                        position: unset;
+                    }
+                }
+            }
+        }
+    }
+}

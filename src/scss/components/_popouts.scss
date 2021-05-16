@@ -1,0 +1,10 @@
+// Popout styles
+.popout{
+    display: none;
+    &.popout--visible{
+        display: block;
+        &.popout--flex{
+            display: flex;
+        }
+    }
+}

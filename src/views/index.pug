@@ -1,0 +1,59 @@
+
+extends layout/layout.pug
+
+block content
+    header
+        h1 Universal Popouts
+        nav
+            button.nav--trigger.popout--trigger(data-popout='nav-wrapper') Nav
+            .popout.popout--flex.popout--static#nav-wrapper
+                button.nav--close.popout--trigger(data-popout='nav-wrapper') Close
+                ul.nav-menu
+                    li
+                        a.popout--trigger(href='#' data-popout='subnav-1') Nav 1
+                        ul.popout#subnav-1
+                            li
+                                a(href='#') Nav 1-1
+                            li
+                                a(href='#') Nav 1-2
+                            li
+                                a(href='#') Nav 1-3
+                    li
+                        a.popout--trigger(href='#' data-popout='subnav-2') Nav 2
+                        ul.popout#subnav-2
+                            li
+                                a(href='#') Nav 2-1
+                            li
+                                a(href='#') Nav 2-2
+                            li
+                                a(href='#') Nav 2-3
+                    li
+                        a(href='#') Nav 3
+    article
+        h2 An example of a universal popout module for JS
+
+        ul
+            li Each of the poppable elements has a class of .popout and a unique ID
+            li Each popout trigger has a class of .popout--trigger has a data-popout attribute corresponding to the popout it controls 
+            li A popout will be visible with display: block, unless it has a class of .popout--flex, when it will be display: flex
+            li In this example we're using the same script to control: 
+                ul 
+                    li Menu dropdowns 
+                    li A modal 
+                    li A mobile menu - this triggers at 768px
+            li The mobile menu has a class of .popout--static; this prevents it from being closed when ALL popout elements are shut and is ONLY closed by one of its triggers. This is really only ideal for things like mobile menus where you may want to contain popouts within popouts
+
+        p
+            button.popout--trigger(data-popout="modal-1") View modal
+        .modal.popout#modal-1
+            p Some content in a modal
+            button.close--modal.popout--trigger(data-popout="modal-1") Close
+
+        h2 Some things I want to do with this: 
+        ul 
+            li Add in some accessibility controls to allow popouts to be closed anywhere outside of the element, on an esc and also to move the focus into the popout when active 
+            li Add and remove active/inactive identifying classes on the triggers - this would allow them to be styled to show state
+            li Test the script with some css transitions to allow elements to animate when they become visible,  i.e. mobile menus sliding in, modals fading up
+        p If you want to play around with this in your own code, grab the popout JS and CSS
+    footer
+        p Built by Andrew Beeken

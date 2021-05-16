@@ -1,0 +1,16 @@
+// Modal styles
+.modal{
+    position: absolute;
+    background: #ccc;
+    padding: 20px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+    border-radius: 10px;
+    .close--modal{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}

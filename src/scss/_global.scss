@@ -1,0 +1,17 @@
+// Breakpoints
+$sm: 480px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1200px;
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    position: relative;
+}
+
+header, article, footer{
+    max-width: $xl;
+    margin: 0 auto;
+    padding: 10px;
+}
